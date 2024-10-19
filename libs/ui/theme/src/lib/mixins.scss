@@ -1,0 +1,208 @@
+@import 'variables';
+
+@mixin create-color($name, $hexCode) {
+  .#{'' + $name} {
+    // important! is needed so that hover-dark1 doesn't mess with this
+    background-color: $hexCode !important;
+  }
+
+  .text-#{'' + $name} {
+    color: $hexCode !important;
+    fill: $hexCode !important;
+  }
+
+  .border-#{'' + $name} {
+    border-color: $hexCode !important;
+  }
+}
+
+@mixin create-multi-color($name, $tk, $hexCode) {
+  .#{'' + $name}-#{$tk} {
+    // important! is needed so that hover-{color} doesn't mess with this
+    background-color: $hexCode !important;
+  }
+
+  .text-#{'' + $name}-#{$tk} {
+    color: $hexCode !important;
+    fill: $hexCode !important;
+
+    &.shadow-bottom {
+      box-shadow: 0 1px 0 0 rgba($hexCode, 0.3);
+    }
+
+    &.shadow-bottom-thick {
+      box-shadow: 0 2px 0 0 rgba($hexCode, 0.3);
+    }
+
+    &.shadow-bottom-thick-solid {
+      box-shadow: 0 2px 0 0 $hexCode;
+    }
+  }
+
+  .border-#{'' + $name}-#{$tk} {
+    border-color: $hexCode !important;
+  }
+
+  .shadow-#{'' + $name}-#{$tk} {
+    &.shadow {
+      box-shadow: 0 0 0 1px $hexCode;
+    }
+
+    &.shadow-thick {
+      box-shadow: 0 0 0 2px $hexCode;
+    }
+
+    &.shadow-bottom {
+      box-shadow: 0 1px 0 0 $hexCode;
+    }
+
+    &.shadow-bottom-thick {
+      box-shadow: 0 2px 0 0 $hexCode;
+    }
+  }
+
+  .#{'' + $name}-#{$tk}.icon {
+    background-color: transparent !important;
+  }
+}
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+/// Mixin to manage responsive breakpoints
+/// @author Kitty Giraudel
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin min-screen-size($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`.\nAvailable breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin max-screen-size($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints-max, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints-max, $breakpoint))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`.\nAvailable breakpoints are: #{map-keys($breakpoints-max)}.";
+  }
+}
+
+@mixin small-device() {
+  @include max-screen-size('mobile') {
+    @content;
+  }
+}
+
+@mixin mobile-device() {
+  @include max-screen-size('tablet') {
+    @content;
+  }
+}
+
+@mixin medium-device() {
+  @include max-screen-size('medium-desktop') {
+    @content;
+  }
+}
+
+@mixin desktop-device() {
+  @include max-screen-size('large-desktop') {
+    @content;
+  }
+}
+
+@mixin extra-desktop-device() {
+  @include max-screen-size('extra-large-desktop') {
+    @content;
+  }
+}
+
+@mixin make-grid($rows, $column) {
+  display: grid;
+  width: 100%;
+  gap: $grid-gutter-width $grid-gutter-width;
+
+  @media all and (-ms-high-contrast: none) {
+    display: -ms-grid;
+    -ms-grid-rows: 1fr;
+  }
+
+  grid-template-rows: repeat($rows, 1fr);
+  grid-template-columns: repeat($column, 1fr);
+}
+
+@mixin make-grid-column($column) {
+  grid-template-columns: repeat($column, 1fr);
+}
+
+@mixin make-small-mobile-grid-column($column) {
+  @include min-screen-size('mobile') {
+    @include make-grid-column($column);
+
+    gap: $grid-gutter-xs;
+    padding-left: $grid-margin-xs;
+    padding-right: $grid-margin-xs;
+  }
+}
+
+@mixin make-tablet-grid-column($column) {
+  @include min-screen-size('tablet') {
+    @include make-grid-column($column);
+
+    gap: $grid-gutter-sm;
+    padding-left: $grid-margin-sm;
+    padding-right: $grid-margin-sm;
+  }
+}
+
+@mixin make-medium-desktop-grid-column($column) {
+  @include min-screen-size('medium-desktop') {
+    @include make-grid-column($column);
+
+    gap: $grid-gutter-md;
+    padding-left: $grid-margin-md;
+    padding-right: $grid-margin-md;
+  }
+}
+
+@mixin make-large-desktop-grid-column($column) {
+  @include min-screen-size('large-desktop') {
+    @include make-grid-column($column);
+
+    gap: $grid-gutter-xl;
+    padding-left: $grid-margin-xl;
+    padding-right: $grid-margin-xl;
+  }
+}
+
+@mixin make-extra-large-desktop-grid-column($column) {
+  @include min-screen-size('extra-large-desktop') {
+    @include make-grid-column($column);
+
+    gap: $grid-gutter-xl;
+    padding-left: $grid-margin-xl;
+    padding-right: $grid-margin-xl;
+    max-width: calc($screen-extra-large-desktop + 6rem);
+  }
+}

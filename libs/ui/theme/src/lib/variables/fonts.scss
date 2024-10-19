@@ -1,0 +1,30 @@
+$font-family: 'Museo Sans Rounded', -apple-system, blinkmacsystemfont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+  'Microsoft YaHei', 'Helvetica Neue', helvetica, arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+  'Segoe UI Symbol';
+
+// font-size
+$font-size-base: 16px;
+$font-size-xs: calc($font-size-base - 4px);
+$font-size-sm: calc($font-size-base - 2px);
+$font-size-lg: calc($font-size-base + 2px);
+$font-size-xlg: calc($font-size-base + 4px);
+
+.fs-xs {
+  font-size: $font-size-xs !important;
+}
+
+.fs-sm {
+  font-size: $font-size-sm !important;
+}
+
+.fs-md {
+  font-size: $font-size-base !important;
+}
+
+.fs-lg {
+  font-size: $font-size-lg !important;
+}
+
+.fs-xl {
+  font-size: $font-size-xlg !important;
+}

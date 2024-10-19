@@ -1,0 +1,1151 @@
+@import 'fonts';
+@import 'colors';
+@import 'grid';
+
+.h0-dsk-bold {
+  /* Deskstop/Heading/H0 Bold */
+
+  font-style: normal;
+  font-weight: 900;
+  font-size: 2.5rem;
+  line-height: 2.875rem; /* 115% */
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.h56-dsk {
+  /* Deskstop/Heading/H0 */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 64px;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.h0-dsk {
+  /* Deskstop/Heading/H0 */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 2.875rem;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.h1-dsk {
+  /* Deskstop/Heading/H1 */
+
+  font-style: normal;
+  font-weight: 900;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.h2-dsk {
+  /* Deskstop/Heading/H2 */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.h2-bold {
+  /* Desktop/Heading/H2-Bold */
+
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.h3-dsk {
+  /* Deskstop/Heading/H3 */
+
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.testim-dsk {
+  /* Deskstop/Heading/Testimonial */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.testim2-dsk {
+  /* Deskstop/Heading/Testimonial */
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.h4-dsk {
+  /* Deskstop/Heading/H4 */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.h4-link {
+  /* Deskstop/Heading/h4-link */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+  text-decoration-line: underline;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.h4-bold {
+  /* Deskstop/Heading/H4-Bold */
+
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.h5-dsk {
+  /* Deskstop/Heading/H5 */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.button-dsk {
+  /* Deskstop/Button/Button */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.button-link-dsk {
+  /* Deskstop/Button/Link */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  text-decoration-line: underline;
+
+  /* grey-base */
+
+  color: $grey-base;
+
+  &.disabled {
+    color: $grey-lgt !important;
+
+    &:hover {
+      color: $grey-lgt !important;
+    }
+  }
+}
+
+.nav-text {
+  /* Deskstop/Navigation/Navigation */
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.body-dsk {
+  /* Deskstop/Body/Body */
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.link-dsk {
+  /* Deskstop/Body/Link */
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-decoration-line: underline;
+
+  /* blue-base */
+
+  color: $blue-base;
+}
+
+.body-semibold {
+  /* Deskstop/Body/Semibold */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.body-bold-dsk {
+  /* Deskstop/Body/Bold */
+
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1rem;
+  line-height: 1.5rem;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.input-dsk {
+  /* Deskstop/Label/User Input */
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.label-thin-dsk {
+  /* Deskstop/Label/Label */
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.25rem;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.label-dsk {
+  /* Deskstop/Label/Label */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.25rem;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.messg-dsk {
+  /* Deskstop/Message/Message */
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+
+  /* grey-base */
+  color: $grey-base;
+}
+
+.messg-link {
+  /* Deskstop/Message/message-link */
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+
+  /* grey-base */
+  color: $grey-base;
+}
+
+.messg-semibold {
+  /* Deskstop/Message/Message */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+
+  /* grey-base */
+  color: $grey-base;
+}
+
+.messg-semibold-link {
+  /* Deskstop/Message/message-semibold-link */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-decoration: underline;
+
+  /* grey-base */
+  color: $grey-base;
+}
+
+.messg-bold-dsk {
+  /* Deskstop/Message/Message */
+
+  font-style: normal;
+  font-weight: 900;
+  font-size: 0.875rem;
+  line-height: 0.75rem;
+
+  /* grey-base */
+  color: $grey-base;
+}
+
+.document-regular {
+  /* Deskstop/Documents/Regular */
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.document-regular-link {
+  /* Deskstop/Documents/Regular-link */
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  text-decoration-line: underline;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.document-semibold {
+  /* Deskstop/Documents/Semibold */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.document-semibold-link {
+  /* Deskstop/Documents/Semibold-link */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  text-decoration-line: underline;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.document-bold {
+  /* Deskstop/Documents/Bold */
+
+  font-style: normal;
+  font-weight: 900;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.document-bold-link {
+  /* Deskstop/Documents/Bold-link */
+
+  font-style: normal;
+  font-weight: 900;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  text-decoration-line: underline;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.footnote-bold {
+  /* Footnote/footnote-bold */
+
+  font-style: normal;
+  font-weight: 900;
+  font-size: 0.625rem;
+  line-height: 0.875rem;
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.footnote-bold-link {
+  /* Footnote/footnote-bold-link */
+
+  font-style: normal;
+  font-weight: 900;
+  font-size: 0.625rem;
+  line-height: 0.875rem;
+  text-align: center;
+  text-decoration-line: underline;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.footnote-semibold {
+  /* Footnote/footnote-semibold */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.625rem;
+  line-height: 0.875rem;
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.footnote-regular {
+  /* Footnote/footnote-regular */
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.625rem;
+  line-height: 0.875rem;
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.footnote-regular-link {
+  /* Footnote/footnote-regular-link */
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.625rem;
+  line-height: 0.875rem;
+  text-align: center;
+  text-decoration-line: underline;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.email-footer-regular {
+  /* Footnote/email footer */
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.5rem;
+  line-height: 0.75rem;
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.email-footer-bold {
+  /* Footnote/email footer-bold */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.5rem;
+  line-height: 0.75rem;
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.email-body-regular {
+  /* Email/body-regular */
+
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem; /* 150% */
+}
+
+.email-body-regular-link {
+  /* Email/body-regular-link */
+
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem; /* 150% */
+  text-decoration-line: underline;
+}
+
+.email-body-bold {
+  /* Email/body-bold */
+
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem; /* 150% */
+}
+
+.email-body-bold-link {
+  /* Email/body-bold-link */
+
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem; /* 150% */
+  text-decoration: underline;
+}
+
+@media (width <= $screen-tablet) {
+  .h0-dsk-bold:not(.keep-dsk) {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .h56-dsk:not(.keep-dsk) {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+
+  .h0-dsk:not(.keep-dsk) {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .h1-dsk:not(.keep-dsk) {
+    font-size: 1.625rem;
+    line-height: 1.875rem;
+  }
+
+  .h2-dsk:not(.keep-dsk) {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+
+  .h2-bold:not(.keep-dsk) {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+
+  .h3-dsk:not(.keep-dsk) {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+
+  .testim-dsk:not(.keep-dsk) {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+
+  .testim2-dsk:not(.keep-dsk) {
+    font-size: 1.625rem;
+    line-height: 2.25rem;
+  }
+
+  .h4-dsk:not(.keep-dsk) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .h4-bold:not(.keep-dsk) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .h5-dsk:not(.keep-dsk) {
+    font-size: 0.9375rem;
+    line-height: 1.25rem;
+  }
+
+  .button-dsk:not(.keep-dsk) {
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+
+  .button-link-dsk:not(.keep-dsk) {
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+
+  .nav-text:not(.keep-dsk) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .body-dsk:not(.keep-dsk) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .link-dsk:not(.keep-dsk) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .body-semibold:not(.keep-dsk) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .body-bold-dsk:not(.keep-dsk) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .input-dsk:not(.keep-dsk) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .label-thin-dsk:not(.keep-dsk) {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .label-dsk:not(.keep-dsk) {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .messg-dsk:not(.keep-dsk) {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .messg-link:not(.keep-dsk) {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .messg-semibold:not(.keep-dsk) {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .messg-bold-dsk:not(.keep-dsk) {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .document-regular:not(.keep-dsk) {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: $grey-base;
+  }
+
+  .document-regular-link:not(.keep-dsk) {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    text-decoration-line: underline;
+    color: $grey-base;
+  }
+
+  .document-semibold:not(.keep-dsk) {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    color: $grey-base;
+  }
+
+  .document-semibold-link:not(.keep-dsk) {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    text-decoration-line: underline;
+    color: $grey-base;
+  }
+
+  .document-bold:not(.keep-dsk) {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 14px;
+    color: $grey-base;
+  }
+
+  .document-bold-link:not(.keep-dsk) {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 14px;
+    text-decoration-line: underline;
+    color: $grey-base;
+  }
+
+  .footnote-bold:not(.keep-dsk) {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 10px;
+    line-height: 140%;
+    text-align: center;
+    color: $grey-base;
+  }
+
+  .footnote-bold-link:not(.keep-dsk) {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 10px;
+    line-height: 140%;
+    text-align: center;
+    text-decoration-line: underline;
+    color: $grey-base;
+  }
+
+  .footnote-semibold:not(.keep-dsk) {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 140%;
+    text-align: center;
+    color: $grey-base;
+  }
+
+  .footnote-regular:not(.keep-dsk) {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 140%;
+    text-align: center;
+    color: $grey-base;
+  }
+
+  .footnote-regular-link:not(.keep-dsk) {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 140%;
+    text-align: center;
+    text-decoration-line: underline;
+    color: $grey-base;
+  }
+
+  .email-footer-regular:not(.keep-dsk) {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 12px;
+    text-align: center;
+    color: $grey-base;
+  }
+
+  .email-footer-bold:not(.keep-dsk) {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 8px;
+    line-height: 12px;
+    text-align: center;
+    color: $grey-base;
+  }
+}
+
+.h0-mob-bold {
+  /* Mobile/Heading/H0 Bold */
+
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.h0-mob {
+  /* Mobile/Heading/H0 */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.h1-mob {
+  /* Mobile/Heading/H1 */
+
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.h2-mob {
+  /* Mobile/Heading/H2 */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.h2-mob-bold {
+  /* Mobile/Heading/H2-Bold */
+
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.h3-mob {
+  /* Mobile/Heading/H3 */
+
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+
+  /* identical to box height, or 133% */
+
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.testim-mob {
+  /* Mobile/Heading/Testimonial */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+
+  /* identical to box height, or 133% */
+
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.h4-mob {
+  /* Mobile/Heading/H4 */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.h4-mob-link {
+  /* Mobile/Heading/H4-Link */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+  text-decoration: underline;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.h4-mob-bold {
+  /* Mobile/Heading/H4-bold */
+
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.h5-mob {
+  /* Mobile/Heading/H5 */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 1.25rem;
+
+  /* identical to box height, or 133% */
+
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.button-mob {
+  /* Mobile/Button/Button */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.button-link-mob {
+  /* Mobile/Button/Link */
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.nav-text-mob {
+  /* Mobile/Navigation/Navigation */
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.body-mob {
+  /* Mobile/Body/Body */
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.link-mob {
+  /* Mobile/Body/Link */
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+  text-decoration-line: underline;
+
+  /* blue-base */
+
+  color: $blue-base;
+}
+
+.body-semi-bold-mob {
+  /* Mobile/Body/semi-bold */
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.body-bold-mob {
+  /* Mobile/Body/Bold */
+
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.input-mob {
+  /* Mobile/Label/User Input */
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.label-mob {
+  /* Mobile/Label/Label */
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+
+  /* identical to box height, or 143% */
+
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
+
+.messg-mob {
+  /* Mobile/Message/Message */
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+
+  /* identical to box height, or 143% */
+
+  text-align: center;
+
+  /* grey-base */
+
+  color: $grey-base;
+}
