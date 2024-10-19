@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@bridge-portal/styles/*": ["libs/ui/theme/src/lib/*"],
+      "@bridge-portal/svg-icons": ["libs/ui/svg-icons/src/index.ts"],
+      "@bridge-portal/theme": ["libs/ui/theme/src/index.ts"],
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
