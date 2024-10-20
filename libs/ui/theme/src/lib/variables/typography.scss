@@ -1,9 +1,9 @@
-@import 'fonts';
-@import 'colors';
-@import 'grid';
+@use 'fonts' as *;
+@use 'colors' as *;
+@use 'grid' as *;
 
 .h0-dsk-bold {
-  /* Deskstop/Heading/H0 Bold */
+  /* Desktop/Heading/H0 Bold */
 
   font-style: normal;
   font-weight: 900;
@@ -16,7 +16,7 @@
 }
 
 .h56-dsk {
-  /* Deskstop/Heading/H0 */
+  /* Desktop/Heading/H0 */
 
   font-style: normal;
   font-weight: 700;
@@ -29,7 +29,7 @@
 }
 
 .h0-dsk {
-  /* Deskstop/Heading/H0 */
+  /* Desktop/Heading/H0 */
 
   font-style: normal;
   font-weight: 700;
@@ -42,7 +42,7 @@
 }
 
 .h1-dsk {
-  /* Deskstop/Heading/H1 */
+  /* Desktop/Heading/H1 */
 
   font-style: normal;
   font-weight: 900;
@@ -55,7 +55,7 @@
 }
 
 .h2-dsk {
-  /* Deskstop/Heading/H2 */
+  /* Desktop/Heading/H2 */
 
   font-style: normal;
   font-weight: 700;
@@ -81,7 +81,7 @@
 }
 
 .h3-dsk {
-  /* Deskstop/Heading/H3 */
+  /* Desktop/Heading/H3 */
 
   font-style: normal;
   font-weight: 900;
@@ -94,7 +94,7 @@
 }
 
 .testim-dsk {
-  /* Deskstop/Heading/Testimonial */
+  /* Desktop/Heading/Testimonial */
 
   font-style: normal;
   font-weight: 700;
@@ -107,7 +107,7 @@
 }
 
 .testim2-dsk {
-  /* Deskstop/Heading/Testimonial */
+  /* Desktop/Heading/Testimonial */
 
   font-style: normal;
   font-weight: 500;
@@ -120,7 +120,7 @@
 }
 
 .h4-dsk {
-  /* Deskstop/Heading/H4 */
+  /* Desktop/Heading/H4 */
 
   font-style: normal;
   font-weight: 700;
@@ -133,7 +133,7 @@
 }
 
 .h4-link {
-  /* Deskstop/Heading/h4-link */
+  /* Desktop/Heading/h4-link */
 
   font-style: normal;
   font-weight: 700;
@@ -147,7 +147,7 @@
 }
 
 .h4-bold {
-  /* Deskstop/Heading/H4-Bold */
+  /* Desktop/Heading/H4-Bold */
 
   font-style: normal;
   font-weight: 900;
@@ -160,7 +160,7 @@
 }
 
 .h5-dsk {
-  /* Deskstop/Heading/H5 */
+  /* Desktop/Heading/H5 */
 
   font-style: normal;
   font-weight: 700;
@@ -173,7 +173,7 @@
 }
 
 .button-dsk {
-  /* Deskstop/Button/Button */
+  /* Desktop/Button/Button */
 
   font-style: normal;
   font-weight: 700;
@@ -186,7 +186,7 @@
 }
 
 .button-link-dsk {
-  /* Deskstop/Button/Link */
+  /* Desktop/Button/Link */
 
   font-style: normal;
   font-weight: 700;
@@ -208,7 +208,7 @@
 }
 
 .nav-text {
-  /* Deskstop/Navigation/Navigation */
+  /* Desktop/Navigation/Navigation */
 
   font-style: normal;
   font-weight: 500;
@@ -221,7 +221,7 @@
 }
 
 .body-dsk {
-  /* Deskstop/Body/Body */
+  /* Desktop/Body/Body */
 
   font-style: normal;
   font-weight: 500;
@@ -234,7 +234,7 @@
 }
 
 .link-dsk {
-  /* Deskstop/Body/Link */
+  /* Desktop/Body/Link */
 
   font-style: normal;
   font-weight: 500;
@@ -248,7 +248,7 @@
 }
 
 .body-semibold {
-  /* Deskstop/Body/Semibold */
+  /* Desktop/Body/Semibold */
 
   font-style: normal;
   font-weight: 700;
@@ -261,7 +261,7 @@
 }
 
 .body-bold-dsk {
-  /* Deskstop/Body/Bold */
+  /* Desktop/Body/Bold */
 
   font-style: normal;
   font-weight: 900;
@@ -274,7 +274,7 @@
 }
 
 .input-dsk {
-  /* Deskstop/Label/User Input */
+  /* Desktop/Label/User Input */
 
   font-style: normal;
   font-weight: 500;
@@ -287,7 +287,7 @@
 }
 
 .label-thin-dsk {
-  /* Deskstop/Label/Label */
+  /* Desktop/Label/Label */
 
   font-style: normal;
   font-weight: 500;
@@ -300,7 +300,7 @@
 }
 
 .label-dsk {
-  /* Deskstop/Label/Label */
+  /* Desktop/Label/Label */
 
   font-style: normal;
   font-weight: 700;
@@ -313,7 +313,7 @@
 }
 
 .messg-dsk {
-  /* Deskstop/Message/Message */
+  /* Desktop/Message/Message */
 
   font-style: normal;
   font-weight: 500;
@@ -325,7 +325,7 @@
 }
 
 .messg-link {
-  /* Deskstop/Message/message-link */
+  /* Desktop/Message/message-link */
 
   font-style: normal;
   font-weight: 500;
@@ -337,7 +337,7 @@
 }
 
 .messg-semibold {
-  /* Deskstop/Message/Message */
+  /* Desktop/Message/Message */
 
   font-style: normal;
   font-weight: 700;
@@ -349,7 +349,7 @@
 }
 
 .messg-semibold-link {
-  /* Deskstop/Message/message-semibold-link */
+  /* Desktop/Message/message-semibold-link */
 
   font-style: normal;
   font-weight: 700;
@@ -362,7 +362,7 @@
 }
 
 .messg-bold-dsk {
-  /* Deskstop/Message/Message */
+  /* Desktop/Message/Message */
 
   font-style: normal;
   font-weight: 900;
@@ -374,7 +374,7 @@
 }
 
 .document-regular {
-  /* Deskstop/Documents/Regular */
+  /* Desktop/Documents/Regular */
 
   font-style: normal;
   font-weight: 500;
@@ -387,7 +387,7 @@
 }
 
 .document-regular-link {
-  /* Deskstop/Documents/Regular-link */
+  /* Desktop/Documents/Regular-link */
 
   font-style: normal;
   font-weight: 500;
@@ -401,7 +401,7 @@
 }
 
 .document-semibold {
-  /* Deskstop/Documents/Semibold */
+  /* Desktop/Documents/Semibold */
 
   font-style: normal;
   font-weight: 700;
@@ -414,7 +414,7 @@
 }
 
 .document-semibold-link {
-  /* Deskstop/Documents/Semibold-link */
+  /* Desktop/Documents/Semibold-link */
 
   font-style: normal;
   font-weight: 700;
@@ -428,7 +428,7 @@
 }
 
 .document-bold {
-  /* Deskstop/Documents/Bold */
+  /* Desktop/Documents/Bold */
 
   font-style: normal;
   font-weight: 900;
@@ -441,7 +441,7 @@
 }
 
 .document-bold-link {
-  /* Deskstop/Documents/Bold-link */
+  /* Desktop/Documents/Bold-link */
 
   font-style: normal;
   font-weight: 900;

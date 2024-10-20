@@ -1,13 +1,13 @@
 $green-base: #008375;
 $green-lgt: #00a591;
-$green-xlgt: #4dbfb3;
+$green-x-lgt: #4dbfb3;
 $green-xx-lgt: #e6f6f4;
 
 // blue
 $blue-base-1: #007e8f;
 $blue-base: #007594;
 $blue-lgt: #00aec5;
-$blue-xlgt: #4dc6d6;
+$blue-x-lgt: #4dc6d6;
 $blue-xx-lgt: #eff9fc;
 $blue-2: #5bc0de;
 
@@ -16,15 +16,15 @@ $grey-base: #3b3b3b;
 $grey-md: #626262;
 $grey-dk: #272727;
 $grey-lgt: #b1b1b1;
-$grey-xlgt: #d8d8d8;
+$grey-x-lgt: #d8d8d8;
 $grey-xx-lgt: #ebebeb;
 $grey-xxx-lgt: #f5f5f5;
 
 // yellow
-$yellow-base: #ffc60b;
+$yellow-base: #ddff1f;
 $yellow-md: #ffb902;
 $yellow-lgt: #ffd755;
-$yellow-xlgt: #ffe89d;
+$yellow-x-lgt: #ffe89d;
 $yellow-xx-lgt: #fff9e7;
 
 // success
@@ -58,14 +58,14 @@ $colors: (
   green: (
     base: $green-base,
     lgt: $green-lgt,
-    xlgt: $green-xlgt,
+    x-lgt: $green-x-lgt,
     xx-lgt: $green-xx-lgt,
   ),
   blue: (
     base: $blue-base,
     base-1: $blue-base-1,
     lgt: $blue-lgt,
-    xlgt: $blue-xlgt,
+    x-lgt: $blue-x-lgt,
     xx-lgt: $blue-xx-lgt,
     2: $blue-2,
   ),
@@ -74,7 +74,7 @@ $colors: (
     md: $grey-md,
     dk: $grey-dk,
     lgt: $grey-lgt,
-    xlgt: $grey-xlgt,
+    x-lgt: $grey-x-lgt,
     xx-lgt: $grey-xx-lgt,
     xxx-lgt: $grey-xxx-lgt,
   ),
@@ -82,7 +82,7 @@ $colors: (
     base: $yellow-base,
     md: $yellow-md,
     lgt: $yellow-lgt,
-    xlgt: $yellow-xlgt,
+    x-lgt: $yellow-x-lgt,
     xx-lgt: $yellow-xx-lgt,
   ),
   success: (

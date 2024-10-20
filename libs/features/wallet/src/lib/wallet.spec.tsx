@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import SvgIcons from './svg-icons';
+import Wallet from './wallet';
 
-describe('SvgIcons', () => {
+describe('Wallet', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<SvgIcons />);
+    const { baseElement } = render(<Wallet />);
     expect(baseElement).toBeTruthy();
   });
 });

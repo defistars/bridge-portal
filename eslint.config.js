@@ -14,6 +14,7 @@ module.exports = [
         'error',
         {
           enforceBuildableLibDependency: true,
+          allowCircularSelfDependency: true,
           allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?js$'],
           depConstraints: [
             {

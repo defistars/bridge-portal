@@ -14,10 +14,20 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "types": [
+      "libs/common/src/lib/@types/index.d.ts"
+    ],
     "paths": {
+      "@bridge-portal/common": ["libs/common/src/index.ts"],
+      "@bridge-portal/shared": ["libs/features/shared/src/index.ts"],
+      "@bridge-portal/shared/*": ["libs/features/shared/src/lib/*"],
       "@bridge-portal/styles/*": ["libs/ui/theme/src/lib/*"],
       "@bridge-portal/svg-icons": ["libs/ui/svg-icons/src/index.ts"],
       "@bridge-portal/theme": ["libs/ui/theme/src/index.ts"],
+      "@bridge-portal/theme/*": ["libs/ui/theme/src/lib/*"],
+      "@bridge-portal/utils": ["libs/utils/src/index.ts"],
+      "@bridge-portal/wallet": ["libs/features/wallet/src/index.ts"],
+      "@bridge-portal/wallet/*": ["libs/features/wallet/src/lib/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
