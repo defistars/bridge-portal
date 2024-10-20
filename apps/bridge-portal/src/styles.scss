@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@import '../../../libs/ui/theme/src/lib/index';
-// @import 'libs/ui/theme/src/lib/index';
+// @use '../../../libs/ui/theme/src/lib/index';
+@use 'libs/ui/theme/src/lib/index';
+@use 'libs/ui/theme/src/lib/variables/colors' as *;
 
 .container {
   max-width: 100rem;
@@ -8,7 +9,7 @@
 }
 
 .yellow {
-  color: '#DDFF1F';
+  color: $yellow-base;
 }
 
 .logo {

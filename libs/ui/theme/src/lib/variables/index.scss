@@ -1,7 +1,7 @@
-@import './colors';
-@import './grid';
-@import './fonts';
-@import './typography';
+@use './colors';
+@use './grid';
+@use './fonts';
+@use './typography';
 
 // layout
 $header-height: 100px;

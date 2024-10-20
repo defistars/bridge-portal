@@ -1,10 +1,13 @@
-import styles from './theme.module.scss';
 import { colors, createTheme } from '@mui/material';
 
 const theme = createTheme({
   components: {
     MuiButton: {
       styleOverrides: {
+        root: {
+          textTransform: 'none',
+          color: '#FFF',
+        },
         outlined: {
           color: '#DDFF1F',
           borderColor: '#DDFF1F',
