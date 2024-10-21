@@ -9,6 +9,9 @@
       "vite/client"
     ]
   },
+  "files": [
+    "../../../libs/common/src/lib/@types/index.d.ts"
+  ],
   "exclude": [
     "**/*.spec.ts",
     "**/*.test.ts",
