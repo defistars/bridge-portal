@@ -11,6 +11,28 @@ import { config } from '@bridge-portal/shared';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { HomePage } from './Homepage';
 import theme from '@bridge-portal/styles/theme';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Transfer } from './Transfer';
+import MainLayout from './layout/Layout';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: (
+      <MainLayout>
+        <HomePage />
+      </MainLayout>
+    ),
+  },
+  {
+    path: 'bridge',
+    element: (
+      <MainLayout>
+        <Transfer />
+      </MainLayout>
+    ),
+  },
+]);
 
 const queryClient = new QueryClient();
 
@@ -20,11 +42,7 @@ export function App() {
       <QueryClientProvider client={queryClient}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <div>
-            <main>
-              <HomePage />
-            </main>
-          </div>
+          <RouterProvider router={router} />
         </ThemeProvider>
       </QueryClientProvider>
     </WagmiProvider>
