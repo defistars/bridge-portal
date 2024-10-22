@@ -12,6 +12,8 @@ import BnbChainFullSvg from './brand/bnb-chain-full.svg?react';
 import JupiterSvg from './brand/jupiter.svg?react';
 import SolflareSvg from './brand/solflare.svg?react';
 import MarginFiSvg from './brand/marginfi.svg?react';
+import BnbNetworkSmallSvg from './small-icons/bnb-network-icon.svg?react';
+import SolNetworkSmallSvg from './small-icons/sol-network-icon.svg?react';
 
 export const DefiStarsIconLogo = (props: IconProps) => (
   <SvgIcon
@@ -169,6 +171,30 @@ export const MarginFiIcon = (props: IconProps) => (
   />
 );
 
+export const BnbNetworkSmallIcon = (props: IconProps) => (
+  <SvgIcon
+    component={BnbNetworkSmallSvg}
+    {...props}
+    viewBox="0 0 24 24"
+    sx={{
+      width: 24,
+      height: 24,
+    }}
+  />
+);
+
+export const SolNetworkSmallIcon = (props: IconProps) => (
+  <SvgIcon
+    component={SolNetworkSmallSvg}
+    {...props}
+    viewBox="0 0 24 24"
+    sx={{
+      width: 24,
+      height: 24,
+    }}
+  />
+);
+
 export const ICONS_MAP = {
   'defistars-logo': <DefiStarsIconLogo />,
   'icon-metamask': <MetaMaskIconLogo />,
@@ -183,6 +209,8 @@ export const ICONS_MAP = {
   'icon-jupiter': <JupiterIcon />,
   'icon-solflare': <SolflareIcon />,
   'icon-marginfi': <MarginFiIcon />,
+  'icon-bnb-network': <BnbNetworkSmallIcon />,
+  'icon-sol-network': <SolNetworkSmallIcon />,
 };
 
 export type IconKeys = keyof typeof ICONS_MAP;

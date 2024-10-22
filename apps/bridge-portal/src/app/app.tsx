@@ -12,7 +12,7 @@ import { CssBaseline, ThemeProvider } from '@mui/material';
 import { HomePage } from './Homepage';
 import theme from '@bridge-portal/styles/theme';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Transfer } from './Transfer';
+import { Transfer } from './pages/Transfer';
 import MainLayout from './layout/Layout';
 
 const router = createBrowserRouter([

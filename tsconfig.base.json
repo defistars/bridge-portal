@@ -14,10 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "types": [
-      "libs/common/src/lib/@types/index.d.ts"
-    ],
+    "types": ["libs/common/src/lib/@types/index.d.ts"],
     "paths": {
+      "@bridge-portal/bridge": ["libs/features/bridge/src/index.ts"],
+      "@bridge-portal/bridge/*": ["libs/features/bridge/src/lib/*"],
       "@bridge-portal/common": ["libs/common/src/index.ts"],
       "@bridge-portal/shared": ["libs/features/shared/src/index.ts"],
       "@bridge-portal/shared/*": ["libs/features/shared/src/lib/*"],
