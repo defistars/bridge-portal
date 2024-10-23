@@ -1,5 +1,6 @@
 import { Box, Typography } from '@mui/material';
-import '../styles.scss';
+import { SelectPair } from '@bridge-portal/bridge';
+import '../../styles.scss';
 
 const Transfer = () => {
   return (
@@ -8,10 +9,13 @@ const Transfer = () => {
         sx={{
           border: '1px solid #181818',
           borderRadius: '1rem',
-          padding: '5rem',
+          marginTop: '2rem',
+          padding: '2rem',
+          width: '40%',
         }}
       >
         <Typography variant="h3">Bridge Swap</Typography>
+        <SelectPair />
       </Box>
     </Box>
   );

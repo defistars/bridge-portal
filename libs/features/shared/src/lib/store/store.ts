@@ -1,4 +1,4 @@
-import { walletReducer } from '@bridge-portal/shared';
+import { bridgeReducer, walletReducer } from '@bridge-portal/shared';
 import type { Action, ThunkAction } from '@reduxjs/toolkit';
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 export const store = configureStore({
   reducer: {
     wallet: walletReducer,
+    bridge: bridgeReducer,
   },
 });
 
