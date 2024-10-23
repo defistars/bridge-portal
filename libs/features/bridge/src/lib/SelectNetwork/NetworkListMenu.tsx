@@ -15,29 +15,24 @@ import {
 } from '@mui/material';
 import React, { SyntheticEvent } from 'react';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
-import { ICONS_MAP } from '@bridge-portal/svg-icons';
+import { Pair } from '@bridge-portal/shared';
+import { networks } from '@bridge-portal/common';
 
 interface NetworkListMenuProps {
   open: boolean;
   anchorRef: React.RefObject<HTMLButtonElement>;
   handleClose: (event: Event | SyntheticEvent) => void;
-}
-
-interface NetworkIcon {
-  name: string;
-  icon: JSX.Element;
+  handleToggle: () => void;
+  handleSelect: (pair: Pair) => void;
 }
 
 const NetworkListMenu: React.FC<NetworkListMenuProps> = ({
   open,
   anchorRef,
   handleClose,
+  handleToggle,
+  handleSelect,
 }) => {
-  const networks: NetworkIcon[] = [
-    { name: 'BNB', icon: ICONS_MAP['icon-bnb-network'] },
-    { name: 'SOL', icon: ICONS_MAP['icon-sol-network'] },
-  ];
-
   return (
     <Popper
       open={open}
@@ -69,7 +64,10 @@ const NetworkListMenu: React.FC<NetworkListMenuProps> = ({
               >
                 {networks.map((icon, index) => (
                   <MenuItem
-                    onClick={handleClose}
+                    onClick={(event) => {
+                      handleSelect({ network: icon.name });
+                      handleClose(event);
+                    }}
                     key={index}
                     sx={{ display: 'flex', gap: '10px' }}
                   >
