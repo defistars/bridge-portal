@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store/store';
-import { NetworkType } from '@bridge-portal/common';
+import { NetworkType, TokenType } from '@bridge-portal/common';
 
 export interface Pair {
   network?: NetworkType;
-  token?: string;
+  token?: TokenType;
 }
 
 export interface BridgeState {

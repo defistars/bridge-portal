@@ -10,23 +10,27 @@ import {
 import React, { SyntheticEvent } from 'react';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import { Pair } from '@bridge-portal/shared';
-import { networks } from '@bridge-portal/common';
+import { NetworkType, platformList } from '@bridge-portal/common';
 
-interface NetworkListMenuProps {
+interface TokenListMenuProps {
   open: boolean;
   anchorRef: React.RefObject<HTMLButtonElement>;
+  selectedPlatform: NetworkType | undefined;
   handleClose: (event: Event | SyntheticEvent) => void;
   handleToggle: () => void;
   handleSelect: (pair: Pair) => void;
 }
 
-const NetworkListMenu: React.FC<NetworkListMenuProps> = ({
+const TokenListMenu: React.FC<TokenListMenuProps> = ({
   open,
   anchorRef,
+  selectedPlatform,
   handleClose,
   handleToggle,
   handleSelect,
 }) => {
+  const tokenList = selectedPlatform ? platformList[selectedPlatform] : [];
+
   return (
     <Popper
       open={open}
@@ -34,9 +38,6 @@ const NetworkListMenu: React.FC<NetworkListMenuProps> = ({
       placement="bottom-start"
       transition
       disablePortal
-      sx={{
-        zIndex: '999',
-      }}
     >
       {({ TransitionProps, placement }) => (
         <Grow
@@ -59,10 +60,13 @@ const NetworkListMenu: React.FC<NetworkListMenuProps> = ({
                   overflow: 'auto',
                 }}
               >
-                {networks.map((icon, index) => (
+                {tokenList.map((icon, index) => (
                   <MenuItem
                     onClick={(event) => {
-                      handleSelect({ network: icon.name });
+                      handleSelect({
+                        network: selectedPlatform,
+                        token: icon.name,
+                      });
                       handleClose(event);
                     }}
                     key={index}
@@ -86,4 +90,4 @@ const NetworkListMenu: React.FC<NetworkListMenuProps> = ({
   );
 };
 
-export { NetworkListMenu };
+export { TokenListMenu };
