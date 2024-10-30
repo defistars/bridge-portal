@@ -1,21 +1,21 @@
-import { Button, Modal, Typography, Box } from '@mui/material';
+import { Button } from '@mui/material';
 import { useAccount } from 'wagmi';
 import { useEffect, useState } from 'react';
-import { WalletOptions } from '@bridge-portal/wallet/WalletOptions/WalletOptions';
 import './connect-wallet-wrapper.scss';
 import {
-  selectWalletAddress,
+  selectWalletAddressFrom,
   setWalletAddress,
   useAppSelector,
   useAppDispatch,
 } from '@bridge-portal/shared';
 import { shortenAddress } from '@bridge-portal/utils';
+import { ConnectWalletModal } from './ConnectWalletModal';
 
 const ConnectWalletWrapper: React.FC = () => {
   const [open, setOpen] = useState(false);
   const { address } = useAccount();
   const dispatch = useAppDispatch();
-  const walletAddress = useAppSelector(selectWalletAddress);
+  const walletAddressFrom = useAppSelector(selectWalletAddressFrom);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -26,46 +26,33 @@ const ConnectWalletWrapper: React.FC = () => {
   };
 
   useEffect(() => {
-    if (address) {
-      dispatch(setWalletAddress(address));
+    if (address && walletAddressFrom == null) {
+      dispatch(setWalletAddress({ addressFrom: address }));
       setOpen(false);
     }
-  }, [address, dispatch]);
-
-  const customBackdropStyle = {
-    backdropFilter: 'blur(22.4px)',
-  };
+  }, [address, dispatch, walletAddressFrom]);
 
   return (
     <div>
-      {walletAddress ? (
-        <Typography variant="body1" className="yellow">
-          {shortenAddress(walletAddress)}
-        </Typography>
+      {walletAddressFrom ? (
+        <Button
+          sx={{
+            backgroundColor: '#141707',
+            color: '#DDFF1F',
+            marginTop: '2rem',
+            padding: '0.625rem 1.25rem 0.625rem 1.25rem',
+            borderRadius: '0.75rem',
+            borderColor: '#000000',
+          }}
+        >
+          {shortenAddress(walletAddressFrom)}
+        </Button>
       ) : (
         <Button variant="outlined" onClick={handleClickOpen}>
           Connect Wallet
         </Button>
       )}
-      <Modal
-        open={open}
-        onClose={handleClose}
-        slotProps={{
-          backdrop: {
-            sx: customBackdropStyle,
-          },
-        }}
-      >
-        <Box className="connect-wallet-container">
-          <Typography variant="h2">Connect Wallet</Typography>
-          <Typography variant="body1">
-            Start by connecting with one of the wallets below. Be sure to store
-            your private keys or seed phrase securely. Never share them with
-            anyone.
-          </Typography>
-          <WalletOptions />
-        </Box>
-      </Modal>
+      <ConnectWalletModal open={open} handleClose={handleClose} />
     </div>
   );
 };

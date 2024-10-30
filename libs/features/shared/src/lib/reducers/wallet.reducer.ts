@@ -2,27 +2,39 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '@bridge-portal/shared';
 
 export interface WalletState {
-  address: string | null;
+  addressFrom?: string | null;
+  addressTo?: string | null;
 }
 
 const initialState: WalletState = {
-  address: null,
+  addressFrom: null,
+  addressTo: null,
 };
 
 export const walletSlice = createSlice({
   name: 'wallet',
   initialState,
   reducers: {
-    setWalletAddress: (state, action: PayloadAction<string>) => {
-      state.address = action.payload;
+    setWalletAddress: (state, action: PayloadAction<WalletState>) => {
+      if (action.payload.addressFrom) {
+        state.addressFrom = action.payload.addressFrom;
+      }
+
+      if (action.payload.addressTo) {
+        state.addressTo = action.payload.addressTo;
+      }
     },
     clearWalletAddress: (state) => {
-      state.address = null;
+      state.addressFrom = null;
+      state.addressTo = null;
     },
   },
 });
 
-export const selectWalletAddress = (state: RootState) => state.wallet.address;
+export const selectWalletAddressFrom = (state: RootState) =>
+  state.wallet.addressFrom;
+export const selectWalletAddressTo = (state: RootState) =>
+  state.wallet.addressTo;
 
 export const { setWalletAddress, clearWalletAddress } = walletSlice.actions;
 

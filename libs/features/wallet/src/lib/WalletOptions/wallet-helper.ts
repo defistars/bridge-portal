@@ -10,13 +10,17 @@ export interface WalletOption {
 export const buildWalletOptions = (connectors: Connector[]): WalletOption[] => {
   return connectors
     .filter((connector: Connector) =>
-      ['metamask'].includes(connector.type.toLowerCase())
+      // ['metamask'].includes(connector.type.toLowerCase())
+      ['io.metamask', 'app.phantom'].includes(connector.id.toLowerCase())
     )
     .map((connector: Connector) => {
       let logo: JSX.Element | null = null;
-      switch (connector.type.toLowerCase()) {
-        case 'metamask':
+      switch (connector.id.toLowerCase()) {
+        case 'io.metamask':
           logo = ICONS_MAP['icon-metamask'];
+          break;
+        case 'app.phantom':
+          logo = ICONS_MAP['icon-phantom'];
           break;
         default:
           break;

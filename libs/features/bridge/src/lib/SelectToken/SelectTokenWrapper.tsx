@@ -2,17 +2,17 @@ import { Button, Typography } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import React, { SyntheticEvent, useRef, useState } from 'react';
-import { NetworkListMenu, NetworkDisplay } from '@bridge-portal/bridge';
+import { TokenListMenu, TokenDisplay } from '@bridge-portal/bridge';
 import { Pair } from '@bridge-portal/shared';
 import { BridgeDirection } from '@bridge-portal/common';
 
-interface NetworkWrapperProps {
+interface TokenWrapperProps {
   direction: BridgeDirection;
   pair: Pair | null;
   handleSelect: (pair: Pair, direction: BridgeDirection) => void;
 }
 
-const SelectNetworkWrapper: React.FC<NetworkWrapperProps> = ({
+const SelectTokenWrapper: React.FC<TokenWrapperProps> = ({
   direction,
   pair,
   handleSelect,
@@ -38,17 +38,18 @@ const SelectNetworkWrapper: React.FC<NetworkWrapperProps> = ({
   return (
     <>
       <Button onClick={handleToggle} ref={anchorRef}>
-        {pair ? (
-          <NetworkDisplay network={pair.network} />
+        {pair?.token ? (
+          <TokenDisplay token={pair.token} />
         ) : (
-          <Typography>Select network</Typography>
+          <Typography>Select token</Typography>
         )}
 
         {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
       </Button>
-      <NetworkListMenu
+      <TokenListMenu
         open={open}
         anchorRef={anchorRef}
+        selectedPlatform={pair?.network}
         handleClose={handleClose}
         handleToggle={handleToggle}
         handleSelect={(selectedPair) => handleSelect(selectedPair, direction)}
@@ -57,4 +58,4 @@ const SelectNetworkWrapper: React.FC<NetworkWrapperProps> = ({
   );
 };
 
-export { SelectNetworkWrapper };
+export { SelectTokenWrapper };
