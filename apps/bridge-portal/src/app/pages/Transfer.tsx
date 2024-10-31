@@ -9,20 +9,25 @@ import {
   selectWalletAddressTo,
   useAppSelector,
 } from '@bridge-portal/shared';
-import { ConnectWalletToWrapper } from '@bridge-portal/wallet';
-import { platform } from 'os';
+import {
+  BridgeConfirmation,
+  ConnectWalletToWrapper,
+} from '@bridge-portal/wallet';
 
 const Transfer = () => {
   const [displayRouteTable, setDisplayRouteTable] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [requestPayload, setRequestPayload] = useState({});
+  const [openConnectWallet, setOpenConnectWallet] = useState(false);
+  const [openBridgeConfirmation, setOpenBridgeConfirmation] = useState(false);
+  const [requestPayload, setRequestPayload] = useState<OrderRequest | null>(
+    null
+  );
   const routeTableRef = useRef<HTMLElement | null>(null);
   const walletAddressFrom = useAppSelector(selectWalletAddressFrom);
   const walletAddressTo = useAppSelector(selectWalletAddressTo);
 
   const handleDisplayRouteTable = () => {
     if (walletAddressTo == null) {
-      setOpen((prevState) => !prevState);
+      setOpenConnectWallet((prevState) => !prevState);
     } else {
       setDisplayRouteTable(true);
     }
@@ -37,11 +42,15 @@ const Transfer = () => {
     }
   };
 
-  const handleClose = () => {
-    setOpen(false);
+  const handleCloseConnectWallet = () => {
+    setOpenConnectWallet(false);
   };
 
-  const buildOrderRequestPayload = () => {
+  const handleCloseBridgeConfirmation = () => {
+    setOpenBridgeConfirmation(false);
+  };
+
+  const handleBridge = () => {
     if (walletAddressFrom == null || walletAddressTo == null) {
       return null;
     }
@@ -52,7 +61,8 @@ const Transfer = () => {
         platform: 'Bsc',
       },
       to: {
-        address: walletAddressTo,
+        // address: walletAddressTo,
+        address: '8FZEQSSXeuHQoT2MKaSAJyFCysP6hSXLYhiijmfP7jjE', // HARD-CODED solanaAddress
         platform: 'Solana',
       },
       amount: '2',
@@ -63,9 +73,9 @@ const Transfer = () => {
         },
       ],
     });
-  };
 
-  console.log('requestPayload', requestPayload);
+    setOpenBridgeConfirmation(true);
+  };
 
   return (
     <Box className="flex flex-column justify-center items-center">
@@ -115,7 +125,7 @@ const Transfer = () => {
           marginBottom: '10rem',
         }}
       >
-        <Box ref={routeTableRef} onClick={buildOrderRequestPayload}>
+        <Box ref={routeTableRef}>
           <RouteTable />
           <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
             <Button
@@ -128,7 +138,7 @@ const Transfer = () => {
                 borderRadius: '0.75rem',
                 borderColor: '#0F1103',
               }}
-              onClick={handleDisplayRouteTable}
+              onClick={handleBridge}
             >
               <Typography>Bridge</Typography>
             </Button>
@@ -136,7 +146,16 @@ const Transfer = () => {
         </Box>
       </Collapse>
 
-      <ConnectWalletToWrapper open={open} handleClose={handleClose} />
+      <ConnectWalletToWrapper
+        open={openConnectWallet}
+        handleClose={handleCloseConnectWallet}
+      />
+
+      <BridgeConfirmation
+        open={openBridgeConfirmation}
+        handleClose={handleCloseBridgeConfirmation}
+        data={requestPayload}
+      />
     </Box>
   );
 };

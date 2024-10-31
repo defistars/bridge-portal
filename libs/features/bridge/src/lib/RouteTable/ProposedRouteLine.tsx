@@ -1,8 +1,33 @@
 import { Box, Button } from '@mui/material';
 import EastIcon from '@mui/icons-material/East';
 import Checkbox from '@mui/material/Checkbox';
+import { useEffect, useState } from 'react';
+import {
+  selectOrder,
+  useAppSelector,
+  useGetOrderDetailsQuery,
+} from '@bridge-portal/shared';
 
 const ProposedRouteLine = () => {
+  const [orderId, setOrderId] = useState<string | null>(null);
+  const order = useAppSelector(selectOrder);
+  const { data: orderDetails } = useGetOrderDetailsQuery(orderId, {
+    skip: !orderId,
+    pollingInterval: 500,
+  });
+
+  useEffect(() => {
+    if (order && order._id) {
+      setOrderId(order._id);
+    }
+  }, [order]);
+
+  useEffect(() => {
+    if (orderDetails?.status === 'Completed') {
+      setOrderId(null);
+    }
+  }, [orderDetails]);
+
   return (
     <Box
       sx={{
@@ -56,6 +81,11 @@ const ProposedRouteLine = () => {
         >
           Best Price
         </Button>
+      </Box>
+      <Box>
+        <span>{orderDetails?.segments[0]?.status}</span>
+        <span>{orderDetails?.segments[0]?.destTxLink}</span>
+        <span>{orderDetails?.segments[0]?.txLink}</span>
       </Box>
     </Box>
   );

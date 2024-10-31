@@ -13,6 +13,7 @@ const RouteTable = () => {
         <div>Route</div>
         <div>Cost</div>
         <div>Time</div>
+        <div>Result</div>
       </Box>
       <Box
         sx={{
