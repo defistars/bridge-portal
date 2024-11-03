@@ -50,3 +50,68 @@ export const tokenIconsMap: Record<TokenType, JSX.Element> = tokenList.reduce(
 
 export type BridgeDirection = 'from' | 'to';
 export const directions: BridgeDirection[] = ['from', 'to'] as const;
+
+export interface Segment {
+  from: string;
+  to: string;
+}
+
+export interface SegmentResponse extends Segment {
+  destTxLink: string;
+  status: string;
+  txLink: string;
+}
+
+export interface RouteDto {
+  segments: Segment[];
+  cost: string;
+  time: string;
+  tag: string;
+}
+
+export const routes: RouteDto[] = [
+  {
+    segments: [
+      {
+        from: 'BSC',
+        to: 'Solana',
+      },
+    ],
+    cost: '$1',
+    time: '1 min',
+    tag: 'Best Price',
+  },
+  {
+    segments: [
+      {
+        from: 'BSC',
+        to: 'Binance',
+      },
+      {
+        from: 'Binance',
+        to: 'Solana',
+      },
+    ],
+    cost: '$2',
+    time: '0.5 min',
+    tag: 'Best Time',
+  },
+];
+
+export interface AddressInfo {
+  address: string;
+  platform: string;
+}
+
+export interface OrderRequest {
+  from: AddressInfo;
+  to: AddressInfo;
+  amount: string;
+  segments: Segment[];
+}
+
+export interface OrderResponse extends OrderRequest {
+  _id: string;
+  status: string;
+  segments: SegmentResponse[];
+}

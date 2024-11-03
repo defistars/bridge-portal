@@ -1,26 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-
-export interface AddressInfo {
-  address: string;
-  platform: string;
-}
-
-export interface Segment {
-  from: string;
-  to: string;
-}
-
-export interface OrderRequest {
-  from: AddressInfo;
-  to: AddressInfo;
-  amount: string;
-  segments: Segment[];
-}
-
-export interface OrderResponse extends OrderRequest {
-  _id: string;
-  status: string;
-}
+import { OrderRequest, OrderResponse } from '@bridge-portal/common';
 
 const HOST = 'http://localhost:3000';
 

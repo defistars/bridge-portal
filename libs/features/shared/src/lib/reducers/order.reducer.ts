@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Segment } from './bridge-api';
+import { Segment } from '@bridge-portal/common';
 import { RootState } from '../store/store';
 
 interface Pair {

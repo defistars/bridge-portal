@@ -1,11 +1,14 @@
-import { Box, Button, Typography, Collapse } from '@mui/material';
-import { RouteTable, SelectPair } from '@bridge-portal/bridge';
+import { Box, Button, Typography } from '@mui/material';
+import {
+  RouteTableWrapper,
+  SelectPair,
+  SwapAmount,
+} from '@bridge-portal/bridge';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import '../../styles.scss';
 import { useRef, useState } from 'react';
 import {
-  OrderRequest,
-  selectWalletAddressFrom,
+  selectOrder,
   selectWalletAddressTo,
   useAppSelector,
 } from '@bridge-portal/shared';
@@ -13,6 +16,8 @@ import {
   BridgeConfirmation,
   ConnectWalletToWrapper,
 } from '@bridge-portal/wallet';
+import { OrderRequest, RouteDto } from '@bridge-portal/common';
+import { routes as allRoutes } from '@bridge-portal/common';
 
 const Transfer = () => {
   const [displayRouteTable, setDisplayRouteTable] = useState(false);
@@ -22,14 +27,19 @@ const Transfer = () => {
     null
   );
   const routeTableRef = useRef<HTMLElement | null>(null);
-  const walletAddressFrom = useAppSelector(selectWalletAddressFrom);
   const walletAddressTo = useAppSelector(selectWalletAddressTo);
+  const [routes, setRoutes] = useState<Array<RouteDto>>(allRoutes);
+  const [displayResult, setDisplayResult] = useState(false);
+  const order = useAppSelector(selectOrder);
+  const [selectedRouteIdx, setSelectedRouteIdx] = useState<number | null>(null);
 
   const handleDisplayRouteTable = () => {
     if (walletAddressTo == null) {
       setOpenConnectWallet((prevState) => !prevState);
     } else {
+      setRoutes(allRoutes);
       setDisplayRouteTable(true);
+      setDisplayResult(false);
     }
   };
 
@@ -48,32 +58,16 @@ const Transfer = () => {
 
   const handleCloseBridgeConfirmation = () => {
     setOpenBridgeConfirmation(false);
+
+    if (selectedRouteIdx != null) {
+      setRoutes(allRoutes.slice(selectedRouteIdx, selectedRouteIdx + 1));
+      setDisplayResult(true);
+    }
   };
 
-  const handleBridge = () => {
-    if (walletAddressFrom == null || walletAddressTo == null) {
-      return null;
-    }
-
-    setRequestPayload({
-      from: {
-        address: walletAddressFrom,
-        platform: 'Bsc',
-      },
-      to: {
-        // address: walletAddressTo,
-        address: '8FZEQSSXeuHQoT2MKaSAJyFCysP6hSXLYhiijmfP7jjE', // HARD-CODED solanaAddress
-        platform: 'Solana',
-      },
-      amount: '2',
-      segments: [
-        {
-          from: 'Bsc',
-          to: 'Solana',
-        },
-      ],
-    });
-
+  const handleBridge = (payload: OrderRequest, routeIdx: number) => {
+    setRequestPayload(payload);
+    setSelectedRouteIdx(routeIdx);
     setOpenBridgeConfirmation(true);
   };
 
@@ -94,6 +88,7 @@ const Transfer = () => {
         >
           <Typography variant="h3">Bridge Swap</Typography>
           <SelectPair />
+          <SwapAmount />
         </Box>
         <Box
           sx={{
@@ -118,33 +113,15 @@ const Transfer = () => {
           </Button>
         </Box>
       </Box>
-      <Collapse
-        in={displayRouteTable}
-        onEntered={handleEntered}
-        sx={{
-          marginBottom: '10rem',
-        }}
-      >
-        <Box ref={routeTableRef}>
-          <RouteTable />
-          <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <Button
-              variant="outlined"
-              sx={{
-                backgroundColor: '#DDFF1F',
-                color: '#0F1103',
-                marginTop: '2rem',
-                padding: '1rem 2rem 1rem 2rem',
-                borderRadius: '0.75rem',
-                borderColor: '#0F1103',
-              }}
-              onClick={handleBridge}
-            >
-              <Typography>Bridge</Typography>
-            </Button>
-          </Box>
-        </Box>
-      </Collapse>
+
+      <RouteTableWrapper
+        routes={routes}
+        displayRouteTable={displayRouteTable}
+        displayResult={displayResult}
+        routeTableRef={routeTableRef}
+        handleEntered={handleEntered}
+        handleBridge={handleBridge}
+      />
 
       <ConnectWalletToWrapper
         open={openConnectWallet}

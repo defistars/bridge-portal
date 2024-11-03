@@ -6,4 +6,6 @@ export * from './lib/SelectToken/SelectTokenWrapper';
 export * from './lib/SelectToken/TokenListMenu';
 export * from './lib/SelectToken/TokenDisplay';
 export * from './lib/RouteTable/RouteTable';
-export * from './lib/RouteTable/ProposedRouteLine';
+export * from './lib/RouteTable/RouteLine';
+export * from './lib/RouteTable/RouteTableWrapper';
+export * from './lib/Amount/SwapAmount';
