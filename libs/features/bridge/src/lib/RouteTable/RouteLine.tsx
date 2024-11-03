@@ -8,7 +8,7 @@ import {
   useGetOrderDetailsQuery,
 } from '@bridge-portal/shared';
 
-const ProposedRouteLine = () => {
+const RouteLine = () => {
   const [orderId, setOrderId] = useState<string | null>(null);
   const order = useAppSelector(selectOrder);
   const { data: orderDetails } = useGetOrderDetailsQuery(orderId, {
@@ -91,4 +91,4 @@ const ProposedRouteLine = () => {
   );
 };
 
-export { ProposedRouteLine };
+export { RouteLine };

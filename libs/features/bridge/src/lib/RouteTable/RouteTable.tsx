@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import { ProposedRouteLine } from './ProposedRouteLine';
+import { RouteLine } from './RouteLine';
 
 const RouteTable = () => {
   return (
@@ -20,7 +20,7 @@ const RouteTable = () => {
           marginTop: '2rem',
         }}
       >
-        <ProposedRouteLine />
+        <RouteLine />
       </Box>
     </Box>
   );

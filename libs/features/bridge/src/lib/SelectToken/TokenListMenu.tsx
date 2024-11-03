@@ -38,6 +38,7 @@ const TokenListMenu: React.FC<TokenListMenuProps> = ({
       placement="bottom-start"
       transition
       disablePortal
+      sx={{ zIndex: '999' }}
     >
       {({ TransitionProps, placement }) => (
         <Grow

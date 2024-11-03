@@ -2,6 +2,7 @@ import {
   bridgeApi,
   bridgeReducer,
   orderReducer,
+  orderRequestReducer,
   walletReducer,
 } from '@bridge-portal/shared';
 import type { Action, ThunkAction } from '@reduxjs/toolkit';
@@ -13,6 +14,7 @@ export const store = configureStore({
     wallet: walletReducer,
     bridge: bridgeReducer,
     order: orderReducer,
+    orderRequest: orderRequestReducer,
     [bridgeApi.reducerPath]: bridgeApi.reducer,
   },
   middleware: (getDefaultMiddleware) => {

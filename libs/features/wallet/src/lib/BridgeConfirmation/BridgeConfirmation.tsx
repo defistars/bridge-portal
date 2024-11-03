@@ -1,13 +1,9 @@
 import { Box, Button, Modal, Typography } from '@mui/material';
 import React from 'react';
 import './bridge-confirmation.scss';
-import {
-  OrderRequest,
-  OrderState,
-  setOrder,
-  useAppDispatch,
-} from '@bridge-portal/shared';
+import { OrderState, setOrder, useAppDispatch } from '@bridge-portal/shared';
 import { useCreateOrderMutation } from '@bridge-portal/shared';
+import { OrderRequest } from '@bridge-portal/common';
 
 interface BridgeConfirmationProps {
   open: boolean;
