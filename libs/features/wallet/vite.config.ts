@@ -12,7 +12,9 @@ export default defineConfig({
   cacheDir: '../../../node_modules/.vite/libs/features/wallet',
   plugins: [
     react(),
-    svgr(),
+    svgr({
+      include: '**/*.svg?react',
+    }),
     nxViteTsPaths(),
     nxCopyAssetsPlugin(['*.md']),
     dts({
