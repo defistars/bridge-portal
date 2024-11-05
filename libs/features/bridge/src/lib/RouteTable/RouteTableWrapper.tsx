@@ -59,7 +59,7 @@ const RouteTableWrapper: React.FC<RouteTableWrapperProps> = ({
 
   const order = useAppSelector(selectOrder);
   const requestAmount = useAppSelector(selectRequestAmount) || '';
-  const { data: orderDetails } = useGetOrderDetailsQuery(orderId, {
+  const { data: orderDetails } = useGetOrderDetailsQuery(orderId as string, {
     skip: !orderId,
     pollingInterval: 5000,
   });

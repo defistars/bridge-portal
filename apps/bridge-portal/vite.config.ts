@@ -22,7 +22,15 @@ export default defineConfig({
       libs: path.resolve(__dirname, '../../libs'),
     },
   },
-  plugins: [react(), svgr(), nxViteTsPaths(), nxCopyAssetsPlugin(['*.md'])],
+  plugins: [
+    react(),
+    svgr({
+      include: '**/*.svg?react',
+    }),
+    ,
+    nxViteTsPaths(),
+    nxCopyAssetsPlugin(['*.md']),
+  ],
   // Uncomment this if you are using workers.
   // worker: {
   //  plugins: [ nxViteTsPaths() ],

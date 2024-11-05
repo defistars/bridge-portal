@@ -7,7 +7,7 @@ export const bridgeApi = createApi({
   reducerPath: 'bridge-api',
   baseQuery: fetchBaseQuery({ baseUrl: `${HOST}/api/v1/` }),
   endpoints: (builder) => ({
-    getOrderDetails: builder.query({
+    getOrderDetails: builder.query<OrderResponse, string>({
       query: (orderId) => `orders/${orderId}`,
     }),
     createOrder: builder.mutation<OrderResponse, OrderRequest>({
