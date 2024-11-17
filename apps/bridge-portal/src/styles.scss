@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-// @use '../../../libs/ui/theme/src/lib/index';
 @use 'libs/ui/theme/src/lib/index';
 @use 'libs/ui/theme/src/lib/variables/colors' as *;
 
@@ -17,4 +16,18 @@
   align-items: center;
   text-decoration: none;
   color: inherit;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.502);
+}
+
+.title-highlight {
+  font-weight: 800;
+  color: #DDFF1F;
+}
+
+.lightning-icon {
+  vertical-align: sub;
+  position: relative;
 }

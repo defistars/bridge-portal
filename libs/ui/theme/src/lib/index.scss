@@ -1,2 +1,8 @@
 @use './basscss';
 @use './mixins';
+@use './variables/index.scss' as vars;
+@use './fonts/fonts.scss';
+
+:root {
+  --font-family: #{vars.$font-family};
+}
