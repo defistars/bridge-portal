@@ -22,7 +22,7 @@ const AppFooter = () => {
       component="footer"
       sx={{
         display: 'flex',
-        justifyContent: 'space-evenly',
+        justifyContent: 'space-between',
         position: 'relative',
         gap: '10px',
         width: '100vw',

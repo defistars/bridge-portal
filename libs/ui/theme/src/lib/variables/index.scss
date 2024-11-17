@@ -1,7 +1,9 @@
-@use './colors';
-@use './grid';
-@use './fonts';
-@use './typography';
+@use './colors.scss';
+@use './grid.scss';
+@use './fonts.scss';
+@use './typography.scss';
+
+@forward './fonts.scss';
 
 // layout
 $header-height: 100px;

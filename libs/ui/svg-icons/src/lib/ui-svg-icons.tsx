@@ -1,4 +1,5 @@
 import { SvgIcon, IconProps } from '@mui/material';
+import LightningSvg from './small-icons/lightning-icon.svg?react';
 import DefiStarsLogoSvg from './brand/defistar-logo.svg?react';
 import MetaMaskLogoSvg from './brand/metamask-icon.svg?react';
 import CoinbaseLogoSvg from './brand/coinbase-icon.svg?react';
@@ -15,6 +16,18 @@ import MarginFiSvg from './brand/marginfi.svg?react';
 import BnbNetworkSmallSvg from './small-icons/bnb-network-icon.svg?react';
 import SolNetworkSmallSvg from './small-icons/sol-network-icon.svg?react';
 import UsdtTokenSmallSvg from './small-icons/usdt-token-icon.svg?react';
+
+export const LightningIcon = (props: IconProps) => (
+  <SvgIcon
+    component={LightningSvg}
+    {...props}
+    viewBox="0 0 56 82"
+    sx={{
+      width: 56,
+      height: 82,
+    }}
+  />
+);
 
 export const DefiStarsIconLogo = (props: IconProps) => (
   <SvgIcon
